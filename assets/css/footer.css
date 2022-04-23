@@ -1,0 +1,23 @@
+.footer {
+    align-items: center;
+    height: 4em;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer .container {
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.footer__title {
+    margin-bottom: 0.25rem;
+}
+
+.footer__title a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
