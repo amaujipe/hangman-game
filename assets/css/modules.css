@@ -3,6 +3,10 @@
     margin-left: 1rem;
 }
 
+.invisible {
+    display: none !important;
+}
+
 .button {
     border: 1px solid var(--text-color-bold);
     border-radius: 1.5rem;

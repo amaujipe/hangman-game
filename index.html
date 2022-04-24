@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
-<body>
+<body id="body">
     
     <header class="header">
         <section class="container">
@@ -24,10 +24,34 @@
     </header>
 
     <main class="main container">
-        <div class="main__buttons">
-            <a href="views/game/index.html" class="button button--primary button--index">Iniciar juego</a>
-            <a href="views/add-word/index.html" class="button button--secondary button--index">Agregar nueva palabra</a>
+        <div id="index" class="main__buttons">
+            <button id="startGameButton" class="button button--primary button--index">Iniciar juego</button>
+            <button id="addNewWordButton" class="button button--secondary button--index">Agregar nueva palabra</button>
         </div>
+        
+        <form id="addWord" class="form invisible">
+            <textarea id="newWordTextarea" class="form__textarea" placeholder="Ingrese una palabra"></textarea>
+            <div class="form__buttons">
+                <span class="form__warning">Máx. de 8 letras</span>
+                <button id="saveWordButton" class="button button--primary">Guardar y empezar</>
+                <button id="cancelButton" class="button button--secondary">Cancelar</button>
+            </div>
+        </form>
+
+        <div id="game" class="game invisible">
+            <canvas id="gameCanvas" class="game__canvas"></canvas>
+            <div id="gameWord" class="game__word">
+                <!-- <div class="game__letter">M</div> -->
+            </div>
+            <div id="wrongLetters" class="game__wrong-letters">
+                <span class="game__wrong-letter">B</span>
+            </div>
+            <div class="game__buttons">
+                <button id="newGameButton" class="button button--primary">Nuevo juego</button>
+                <button id="endGameButton" class="button button--secondary">Desistir</button>
+            </div>
+        </div>
+
     </main>
 
     <footer class="footer">
@@ -36,6 +60,10 @@
             <p class="footer__paragraph">Oracle ONE - Allura Challenges</p>
         </section>
     </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/buttonsActions.js"></script>
+    <script src="assets/js/startNewGame.js"></script>
 
 </body>
 </html>

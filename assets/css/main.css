@@ -80,8 +80,31 @@
 
 .game__canvas {
     background-color: gray;
-    height: 100%;
+    height: 60%;
     margin-bottom: 0.5rem;
+}
+
+.game__word {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1.5rem;
+}
+
+.game__letter {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    box-sizing: content-box;
+    padding-bottom: 0.125rem;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.game__wrong-letters {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 
@@ -89,6 +112,16 @@
 
     .main {
         width: calc(100% - 5rem);
+    }
+
+    .game__canvas {
+        height: 75%;
+    }
+
+    .game__letter {
+        width: 40px;
+        height: 40px;
+        font-size: 40px;
     }
 
 }
@@ -117,4 +150,10 @@
     .game__buttons .button:first-child {
         margin-bottom: 0.5rem;
     } 
+
+    .game__letter {
+        width: 25px;
+        height: 25px;
+        font-size: 25px;
+    }
 }
