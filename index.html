@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/footer.css">
 </head>
-<body id="body">
+<body>
     
     <header class="header">
         <section class="container">
@@ -24,12 +24,12 @@
     </header>
 
     <main class="main container">
-        <div id="index" class="main__buttons">
+        <div id="indexView" class="main__buttons">
             <button id="startGameButton" class="button button--primary button--index">Iniciar juego</button>
             <button id="addNewWordButton" class="button button--secondary button--index">Agregar nueva palabra</button>
         </div>
         
-        <form id="addWord" class="form invisible">
+        <form id="addWordView" class="form invisible">
             <textarea id="newWordTextarea" class="form__textarea" placeholder="Ingrese una palabra"></textarea>
             <div class="form__buttons">
                 <span class="form__warning">Máx. de 8 letras</span>
@@ -38,9 +38,11 @@
             </div>
         </form>
 
-        <div id="game" class="game invisible">
-            <canvas id="gameCanvas" class="game__canvas"></canvas>
-            <div id="gameWord" class="game__word">
+        <div id="gameView" class="game invisible">
+            <div class="game__canvas--container">
+                <canvas id="gameCanvas" class="game__canvas" width="300px" height="400px"></canvas>
+            </div>
+            <div id="wordBoard" class="game__word">
                 <!-- <div class="game__letter">M</div> -->
             </div>
             <div id="wrongLetters" class="game__wrong-letters">
@@ -50,6 +52,7 @@
                 <button id="newGameButton" class="button button--primary">Nuevo juego</button>
                 <button id="endGameButton" class="button button--secondary">Desistir</button>
             </div>
+            <div id="gameMessage" class="game__message"></div>
         </div>
 
     </main>
@@ -61,5 +64,11 @@
         </section>
     </footer>
     
+    <script src="assets/js/start-new-game.js"></script>
+    <script src="assets/js/helpers.js"></script>
+    <script src="assets/js/draw-hangman.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/button-listerners.js"></script>
+
 </body>
 </html>
