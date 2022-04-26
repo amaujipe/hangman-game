@@ -18,7 +18,7 @@ const gameCanvas    = document.getElementById('gameCanvas'),
       wrongLetters  = document.getElementById('wrongLetters'), 
       gameMessage   = document.getElementById('gameMessage');
 
-// Creating the game word bank
+// Creating the game WordBank
 let words = ['PENSAR', 'CONDUCIR', 'ESCUCHAR', 'PATENTAR', 'DIALOGAR', 'CONVIVIR', 'HABLAR'];
 
 // Global game variables
@@ -30,9 +30,15 @@ let wrongLettersShowed;
 
 // Listening when user press a key during the game
 document.addEventListener('keyup', (e) => {
+    // let regex = new RegExp(e.key, 'i');
+    console.log(e.key)
     if(currentView() === 'game-view') {
-        if(keepPlaying()) {
-            validateTurn(e.key.toUpperCase()); 
+        if(e.key.match(/^[a-z]*$/) || e.key.match(/^[A-Z]*$/)) {
+            if(keepPlaying()) {
+                validateTurn(e.key.toUpperCase()); 
+            }
+        } else if(!(e.key === 'CapsLock' || e.key === 'Shift')){
+            alert('Solo acepto letras sin acentos.');
         }
     }
 });

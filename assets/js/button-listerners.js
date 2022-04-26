@@ -11,13 +11,18 @@ addNewWordButton.addEventListener('click', () => {
     addWordView.classList.toggle('invisible');
 });
 
-// Getting the word the user want to add to the word bank, and starting new game
+// Getting the word the user want to add to the WordBank, and starting new game
 saveWordButton.addEventListener('click', (e) => {
     e.preventDefault();
-    words.push(newWordTextarea.value.toUpperCase());
-    addWordView.classList.toggle('invisible');
-    gameView.classList.toggle('invisible');
-    startNewGame();
+    let word = newWordTextarea.value;
+    if(word.match(/^[a-zA-Z]*$/) && word.length <= 8) {
+        words.push(word.toUpperCase());
+        addWordView.classList.toggle('invisible');
+        gameView.classList.toggle('invisible');
+        startNewGame();
+    } else {
+        alert('Palabra errada, intentalo de nuevo. \nRecuerda: Máximo 8 letras y sin acentos.');
+    }
 });
 
 // Cancel adding new word and return to index view

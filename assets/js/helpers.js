@@ -37,6 +37,7 @@ let hasWon = () => (wordToPlay.join('') === foundLetters.join('')) ? true : fals
 // This function shows a message and the secret word when the user lost the game.
 function youLost(message) {
     showMessage(message);
+    attemps = -1;
     for(let i = 0; i < wordToPlay.length; i++) {
         showLetterInBoard(i, wordToPlay[i]);
     }
